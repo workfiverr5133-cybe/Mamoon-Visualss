@@ -1,0 +1,199 @@
+/* --------- BASE & THEME (Blue + Purple Neon) --------- */
+
+.gallery video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+:root{
+  --bg:#04060a;
+  --card:#071226;
+  --muted:#98a8bf;
+  --neon-1: #6a5eff;
+  --neon-2: #06b6d4;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --transition: 280ms cubic-bezier(.2,.9,.2,1);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(106,94,255,0.08), transparent 8%),
+              radial-gradient(900px 400px at 95% 90%, rgba(6,182,212,0.06), transparent 6%),
+              var(--bg);
+  color:#e6f2ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+.site-header{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 36px;
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:linear-gradient(180deg, rgba(7,18,38,0.55), rgba(4,6,10,0.36));
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:52px;height:52px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#041022;background: linear-gradient(135deg,var(--neon-1),var(--neon-2));
+  box-shadow: 0 10px 30px rgba(106,94,255,0.16);
+}
+.brand-name{font-weight:700}
+.brand-tag{font-size:12px;color:var(--muted)}
+
+.nav a{
+  margin:0 10px;color:rgba(230,242,255,0.85);text-decoration:none;font-weight:600;
+  padding:8px 10px;border-radius:8px;transition:var(--transition);
+}
+.nav a:hover{color:#fff;transform:translateY(-4px);text-shadow:0 6px 20px rgba(106,94,255,0.08)}
+
+/* Buttons */
+.btn-primary{
+  display:inline-block;padding:10px 16px;border-radius:10px;font-weight:700;color:#021024;
+  background:linear-gradient(90deg,var(--neon-1),var(--neon-2));
+  box-shadow: 0 10px 30px rgba(6,182,212,0.08);
+  border: none; cursor:pointer; text-decoration:none;
+}
+.btn-primary.small{padding:8px 12px;font-size:14px;border-radius:8px}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:var(--muted)}
+
+/* HERO */
+.hero{padding:72px 36px 36px}
+.hero-inner{display:flex;align-items:center;gap:32px;max-width:1200px;margin:0 auto}
+.hero-text{flex:1;max-width:720px}
+.hero-text h1{font-size:34px;line-height:1.02;margin:0 0 12px}
+.accent{background: linear-gradient(90deg,var(--neon-2),var(--neon-1)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:800}
+.lead{color:var(--muted);margin-top:6px}
+.hero-cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+.quick-features{display:flex;gap:10px;margin-top:16px;list-style:none;padding:0}
+.quick-features li{background:var(--glass);padding:8px 12px;border-radius:10px;color:var(--muted);font-size:13px}
+
+/* HERO MEDIA CARD */
+.hero-card{width:420px;min-height:260px;border-radius:18px;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow: 0 18px 50px rgba(2,6,12,0.75);border:1px solid rgba(255,255,255,0.04);transform: perspective(900px) rotateX(3deg) translateY(-6px);transition:var(--transition)}
+.media-shell{border-radius:12px;overflow:hidden}
+.media-shell img{display:block;width:100%;height:260px;object-fit:cover;transform:translateZ(0);transition:transform 500ms ease}
+.hero-card:hover .media-shell img{transform:scale(1.04) rotateZ(-0.6deg)}
+.badge{position:relative;display:inline-block;margin-top:10px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--neon-2),var(--neon-1));color:#021024;font-weight:700;box-shadow:0 10px 30px rgba(106,94,255,0.12);}
+
+/* SECTION BASE */
+.section{padding:64px 36px}
+.section-title{font-size:22px;margin:0 0 6px}
+.section-sub{color:var(--muted);margin-bottom:18px}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1200px;margin:0 auto}
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);transition:transform var(--transition);transform-style:preserve-3d}
+.service-card:hover{transform: translateY(-10px) rotateX(4deg) translateZ(6px);box-shadow: 0 30px 70px rgba(2,6,12,0.6)}
+.icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--neon-1),var(--neon-2));color:#041022;font-weight:800;margin-bottom:12px}
+.card-actions{display:flex;gap:12px;align-items:center;margin-top:14px}
+.service-card ul{color:var(--muted);margin-top:10px}
+
+/* GALLERY */
+.dark-section{background:linear-gradient(180deg, rgba(3,6,12,0.4), transparent);padding-bottom:48px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:18px auto 0}
+.card{border-radius:12px;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transform:translateZ(0);transition:transform var(--transition), box-shadow var(--transition)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card .meta{padding:12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.card:hover{transform: translateY(-12px) rotateX(6deg);box-shadow: 0 40px 80px rgba(2,6,12,0.75)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 460px;gap:20px;max-width:1200px;margin:0 auto}
+.contact-info .info-card{display:flex;gap:20px;background:var(--glass);padding:14px;border-radius:12px}
+.packs{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.pack{background:linear-gradient(90deg, rgba(106,94,255,0.08), rgba(6,182,212,0.06));padding:10px;border-radius:10px;color:var(--muted)}
+
+.contact-form{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:10px;margin-top:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+.form-actions{display:flex;gap:10px;margin-top:12px;align-items:center}
+.form-status{margin-top:10px;color:var(--muted)}
+
+/* FOOTER */
+.site-footer{padding:22px 36px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;color:var(--muted);align-items:center}
+
+/* ✅ LIGHTBOX FINAL FIX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.8);
+  z-index:120;
+}
+
+.lightbox .inner{
+  max-width:1100px;
+  width:92%;
+  border-radius:12px;
+  overflow:hidden;
+  background:#031020;
+}
+
+/* ✅ Images perfect (no crop) */
+.lightbox img{
+  width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  background:#000;
+}
+
+/* ✅ Videos unchanged (cover fullscreen) */
+.lightbox video{
+  width:100%;
+  max-height:90vh;
+  object-fit:cover;
+  background:#000;
+}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .services-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .hero-inner{flex-direction:column-reverse}
+  .hero-card{width:100%}
+}
+@media (max-width:520px){
+  .site-header{padding:12px 14px}
+  .nav{display:none}
+  .hero-text h1{font-size:20px}
+  .gallery{grid-template-columns:1fr}
+}
+
+
+/* Strong Neon Border Glow on Gallery Card Hover */
+.card:hover {
+  position: relative;
+  z-index: 9;
+}
+
+/* Neon Shadow Glow */
+.card {
+  transition: var(--transition);
+  box-shadow: 0 0 0 rgba(0,0,0,0); /* Default no shadow */
+}
+
+.card:hover {
+  transform: translateY(-12px) rotateX(6deg);
+  box-shadow:
+    0 0 22px rgba(106, 94, 255, 0.35),  /* Purple glow */
+    0 0 38px rgba(6, 182, 212, 0.25);  /* Cyan glow */
+}
+
